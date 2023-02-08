@@ -1,0 +1,20 @@
+.driverTable {
+  max-width: 100%;
+  margin-top: 2rem;
+}
+
+@media only screen and (max-width: 1261px) {
+  .driverTable {
+    margin-top: 14rem;
+  }
+}
+@media only screen and (min-width: 797px) and (max-width: 957px) {
+  .driverTable {
+    margin-top: 29rem;
+  }
+}
+@media only screen and (max-width: 797px) {
+  .driverTable {
+    margin-top: 30rem;
+  }
+}

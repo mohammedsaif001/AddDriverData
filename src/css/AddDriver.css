@@ -472,3 +472,96 @@ input[type="radio"] {
   background: yellow;
   margin-left: 200px;
 }
+
+@media only screen and (max-width: 1311px) {
+  .section5_third .input-field .dropDownBig {
+    width: 38rem;
+  }
+}
+@media only screen and (max-width: 1279px) {
+  .section5_third .input-field .dropDownBig {
+    width: 37rem;
+  }
+}
+@media only screen and (max-width: 1239px) {
+  .section5_third .input-field .dropDownBig {
+    width: 36rem;
+  }
+}
+@media only screen and (max-width: 1215px) {
+  .section5_third .input-field .dropDownBig {
+    width: 34rem;
+  }
+}
+@media only screen and (max-width: 1152px) {
+  .section5_third .input-field .dropDownBig {
+    width: 32rem;
+  }
+}
+@media only screen and (max-width: 1088px) {
+  .section5_third .input-field .dropDownBig {
+    width: 31rem;
+  }
+}
+@media only screen and (max-width: 1056px) {
+  .section5_third .input-field .dropDownBig {
+    width: 30rem;
+  }
+}
+@media only screen and (max-width: 1023px) {
+  .section5_third .input-field .dropDownBig {
+    width: 29rem;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .section5_third .input-field .dropDownBig {
+    width: 28rem;
+  }
+}
+@media only screen and (max-width: 960px) {
+  .section5_third .input-field .dropDownBig {
+    width: 27rem;
+  }
+}
+@media only screen and (max-width: 928px) {
+  .section5_third .input-field .dropDownBig {
+    width: 24rem;
+  }
+}
+@media only screen and (max-width: 832px) {
+  .section5_third .input-field .dropDownBig {
+    width: 23rem;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .section5_third .input-field .dropDownBig {
+    width: 22rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .section5_third .input-field .dropDownBig {
+    width: 21rem;
+  }
+}
+@media only screen and (max-width: 736px) {
+  .section5_third .input-field .dropDownBig {
+    width: 19rem;
+  }
+}
+@media only screen and (max-width: 672px) {
+  .section5_third .input-field .dropDownBig {
+    width: 17rem;
+  }
+}
+@media only screen and (max-width: 637px) {
+  .section5_third .input-field .dropDownBig {
+    width: 17rem;
+  }
+}
+@media only screen and (max-width: 546px) {
+  .identification_input {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 16px;
+  }
+}

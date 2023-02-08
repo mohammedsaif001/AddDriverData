@@ -5,25 +5,11 @@ import { Add } from "@material-ui/icons";
 import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
 import CheckBoxIcon from "@material-ui/icons/CheckBox";
 import { DriverList } from "../context/DriverListContext";
+import "../css/DriverTable.css";
 const DriverTable = () => {
   const { driversList } = useContext(DriverList);
   console.log(driversList);
-  const [tableData, setTableData] = useState([
-    {
-      status: "Static",
-      moxeyID: "MXUAE-DR00000001",
-      transporter: "Trukker",
-      driverName_EN: "Abdul Fathah",
-      driverName_AR: "عبد الفتاح",
-      mobileNO: "+955738645733",
-      cust_id: "ARB45678900",
-      card_no: "****  ****  ****  2309",
-      driverNsdame_AR: "عبد الفتاح",
-      mobissleNO: "+955738645733",
-      custsd_id: "ARB45678900",
-      cardds_no: "****  ****  ****  2309",
-    },
-  ]);
+
   const columns = [
     {
       title: "Status",
@@ -80,7 +66,7 @@ const DriverTable = () => {
     { title: "CARD NO.", field: "card_no" },
   ];
   return (
-    <div style={{ maxWidth: "100%", marginTop: "10rem" }}>
+    <div className="driverTable">
       <MaterialTable
         columns={columns}
         data={driversList}

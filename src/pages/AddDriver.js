@@ -1175,7 +1175,6 @@ const AddDriver = () => {
                     </select>
                   )}
                 </div>
-                ;
               </div>
               <div className="input-field">
                 <div className="label required">Zip Code</div>

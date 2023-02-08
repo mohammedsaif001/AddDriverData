@@ -1,13 +1,43 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Icon } from "@iconify/react";
 import "../css/HomePage.css";
 import DriverTable from "../components/DriverTable";
 import AddDriver from "./AddDriver";
 import { Link } from "react-router-dom";
 import { DriverList } from "../context/DriverListContext";
+import { countryData } from "../apis/fetchingAPI";
 
 const Home = () => {
   const { driversList } = useContext(DriverList);
+  const [selectMonthData, setselectMonthData] = useState(
+    "12 MAR 2022 - 12 AUG 2022"
+  );
+  const [country, setCountry] = useState("Afghanistan");
+  const [countryList, setCountryList] = useState([]);
+  const countryRef = useRef();
+  const monthRef = useRef();
+  useEffect(() => {
+    const fetchCountryDetails = async () => {
+      const { data, status } = await countryData();
+      console.log(data, status);
+      if (status === 401) {
+        setCountryList([]);
+        console.error(data);
+      }
+      if (status === 200) {
+        setCountryList(data);
+      }
+    };
+    fetchCountryDetails();
+  }, []);
+
+  const handleSetMonth = (e) => {
+    setselectMonthData(e.target.value);
+  };
+  const handleCountry = (e) => {
+    setCountry(e.target.value);
+  };
+
   console.log("he;;;;", driversList);
   const [handleModal, setHandleModal] = useState(false);
   return (
@@ -23,30 +53,46 @@ const Home = () => {
       </nav>
       <main>
         <section className="dropdown_section">
-          <div className="dropdown">
-            <div className="dropdown_individual" data-bs-toggle="dropdown">
+          <div className="dropdown btn-group">
+            <div
+              className="dropdown_individual"
+              data-bs-toggle="dropdown"
+              style={{ position: "relative" }}
+              onClick={(e) => countryRef.country.select()}
+            >
               <div className="dropdown_icon">
                 <iconify-icon icon="ph:globe"></iconify-icon>
               </div>
               <div className="dropdownCustom">
-                <span className="drText">United Arab Emirates</span>
-                <ul className="dropdown-menu">
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      India
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Female
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Others
-                    </a>
-                  </li>
-                </ul>
+                <select
+                  className="dropdown"
+                  style={{
+                    position: "absolute",
+                    // border: "none",
+                    top: "-20px",
+                    width: "12rem",
+                    opacity: "0",
+                  }}
+                  data-bs-toggle="dropdown"
+                  required
+                  name="nationality"
+                  onClick={handleCountry}
+                  ref={countryRef}
+                >
+                  {countryList?.map((countryItems) => {
+                    return (
+                      <option
+                        value={countryItems.name}
+                        className="dropdown-item"
+                        style={{ cursor: "pointer" }}
+                        key={countryItems.id}
+                      >
+                        {countryItems.name}
+                      </option>
+                    );
+                  })}
+                </select>
+                <span className="drText">{country}</span>
               </div>
 
               <div className="dropdown_label">COUNTRY</div>
@@ -57,24 +103,65 @@ const Home = () => {
                 <img src="calendar.png" alt="" />
               </div>
               <div className="dropdownCustom dropdownCustom1">
-                <span className="drText1">12 MAR 2022 - 12 AUG 2022</span>
-                <ul className="dropdown-menu">
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      12 MAR 2022 - 12 AUG 2022
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      12 MAR 2022 - 12 AUG 2022
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      12 MAR 2022 - 12 AUG 2022
-                    </a>
-                  </li>
-                </ul>
+                <select
+                  className="dropdown"
+                  style={{
+                    position: "absolute",
+                    // border: "none",
+                    top: "-20px",
+                    width: "12rem",
+                    opacity: "0",
+                  }}
+                  data-bs-toggle="dropdown"
+                  required
+                  name="prevMonth"
+                  onClick={handleSetMonth}
+                  ref={monthRef}
+                >
+                  <option
+                    value="12 MAR 2022 - 12 AUG 2022"
+                    className="dropdown-item"
+                    style={{ cursor: "pointer" }}
+                  >
+                    12 MAR 2022 - 12 AUG 2022
+                  </option>
+                  <option
+                    value="12 AUG 2022 - 12 JAN 2023"
+                    className="dropdown-item"
+                    style={{ cursor: "pointer" }}
+                  >
+                    12 AUG 2022 - 12 JAN 2023
+                  </option>
+                  <option
+                    value="12 MAR 2022 - 12 AUG 2022"
+                    className="dropdown-item"
+                    style={{ cursor: "pointer" }}
+                  >
+                    12 MAR 2022 - 12 AUG 2022
+                  </option>
+                  <option
+                    value="12 AUG 2022 - 12 JAN 2023"
+                    className="dropdown-item"
+                    style={{ cursor: "pointer" }}
+                  >
+                    12 AUG 2022 - 12 JAN 2023
+                  </option>
+                  <option
+                    value="12 MAR 2022 - 12 AUG 2022"
+                    className="dropdown-item"
+                    style={{ cursor: "pointer" }}
+                  >
+                    12 MAR 2022 - 12 AUG 2022
+                  </option>
+                  <option
+                    value="12 AUG 2022 - 12 JAN 2023"
+                    className="dropdown-item"
+                    style={{ cursor: "pointer" }}
+                  >
+                    12 AUG 2022 - 12 JAN 2023
+                  </option>
+                </select>
+                <span className="drText1">{selectMonthData}</span>
               </div>
 
               <div className="dropdown_label dropdown_label1">LAST 5 MONTH</div>
@@ -133,22 +220,22 @@ const Home = () => {
             </div>
           </div>
           <div className="cardSection3">
-            <button
-              className="addButton"
-              onClick={() => {
-                setHandleModal(true);
-                console.log(handleModal);
-              }}
-            >
-              <Link className="nav-link" to="/addNewDriver">
+            <Link className="nav-link" to="/addNewDriver">
+              <button
+                className="addButton"
+                onClick={() => {
+                  setHandleModal(true);
+                  console.log(handleModal);
+                }}
+              >
                 Add New Driver{" "}
                 <Icon
                   icon="material-symbols:keyboard-arrow-right"
                   color="white"
                   className="rightArrow"
                 />
-              </Link>
-            </button>
+              </button>
+            </Link>
             <div className="section3Card">
               <div className="cardTop">
                 <div className="heading">Total Drivers</div>

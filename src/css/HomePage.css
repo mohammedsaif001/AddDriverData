@@ -259,7 +259,7 @@ main .cardSection1 .cardLarge .cardLarge_top {
 .cards .cardSection3 .addButton {
   background: #109887;
   border-radius: 10px;
-  width: 100%;
+  width: 17rem;
   height: 3rem;
   color: #ffffff;
   font-family: "Montserrat";
@@ -506,4 +506,27 @@ main .dropdown_section .dropdown_icon {
 
 .addButton .rightArrow {
   font-size: 2rem;
+}
+
+@media only screen and (max-width: 1261px) {
+  .cards .cardSection3 {
+    width: 37rem;
+    height: 15rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  .cards .cardSection3 .addButton {
+    width: 17rem;
+  }
+}
+@media only screen and (max-width: 797px) {
+  .cards.cardSection3 {
+    flex-direction: row;
+  }
+  main .dropdown_section {
+    gap: 2rem;
+  }
 }

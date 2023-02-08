@@ -1843,7 +1843,6 @@ const AddDriver = () => {
           </div>
         </main>
       </form>
-      ;
     </>
   );
 };

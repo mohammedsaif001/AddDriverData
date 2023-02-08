@@ -512,9 +512,13 @@ main .dropdown_section .dropdown_icon {
   font-size: 2rem;
 }
 
-@media only screen and (max-width: 1261px) {
+@media only screen and (min-width: 797px) and (max-width: 957px) {
+  main {
+    margin-bottom: 17rem;
+  }
+
   .cards .cardSection3 {
-    width: 37rem;
+    width: 47rem;
     height: 15rem;
     display: flex;
     flex-direction: row;
@@ -525,33 +529,102 @@ main .dropdown_section .dropdown_icon {
   .cards .cardSection3 .addButton {
     width: 17rem;
   }
-}
-@media only screen and (max-width: 797px) {
-  .cards.cardSection3 {
-    flex-direction: row;
+  .cards .cardSection3 .section3Card {
+    width: 40rem;
   }
-  main .dropdown_section {
-    gap: 2rem;
+  .cards .cardSection3 {
+    width: 30rem;
   }
 }
 
-@media only screen and (max-width: 1261px) {
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 493px) {
+}
+@media only screen and (max-width: 600px) {
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+@media only screen and (max-width: 768px) {
+  main {
+    margin-bottom: 29rem;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .cards .cardSection3 {
+    width: 17rem;
+  }
+  .cards .cardSection3 .addButton {
+    width: 14rem;
+    padding: 0 10%;
+  }
+  .cardSection2 {
+    width: 29rem;
+    min-height: 14rem;
+    /* background-color: wheat; */
+  }
+  main .cardSection1 .cardLarge {
+    border-radius: 10px;
+    width: 25rem;
+  }
+  main .cardSection1 .cardLarge .cardLarge_bottom {
+    width: 22.2rem;
+  }
+  main {
+    margin-bottom: 29rem;
+  }
+}
+
+@media only screen and (min-width: 781px) {
+  main {
+    margin-bottom: 15rem;
+  }
+}
+@media only screen and (min-width: 797px) {
+  .cards .cardSection3 {
+    width: 37rem;
+  }
+  main {
+    margin-bottom: 29rem;
+  }
+}
+@media only screen and (min-width: 909px) {
+  .cards .cardSection3 {
+    flex-flow: row nowrap;
+    width: 30rem;
+  }
   main {
     margin-bottom: 12rem;
   }
 }
-@media only screen and (min-width: 797px) and (max-width: 957px) {
-  main {
-    margin-bottom: 25rem;
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+  .navbar .notification {
+    right: 2rem;
   }
 }
-@media only screen and (max-width: 797px) {
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .cards .cardSection3 {
+    flex-flow: column wrap;
+    width: 17rem;
+  }
   main {
-    margin-bottom: 28rem;
+    margin-bottom: 2rem;
   }
 }
-@media only screen and (max-width: 493px) {
-  main {
-    margin-bottom: 42rem;
+@media only screen and (max-width: 741px) {
+  main .dropdown_section {
+    gap: 1rem;
+  }
+}
+@media only screen and (max-width: 451px) {
+  main .cardSection1 .cardLarge {
+    width: 25rem;
+  }
+  main .cardSection1 .cardLarge .cardLarge_bottom {
+    width: 23rem;
   }
 }

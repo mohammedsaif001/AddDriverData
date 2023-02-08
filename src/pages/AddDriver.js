@@ -230,9 +230,25 @@ const AddDriver = () => {
         });
         return false;
       } else {
-        setisError((prevErrors) => {
-          return { ...prevErrors, ["dateBirth"]: false };
-        });
+        var now = new Date(); //getting current date
+        var currentY = now.getFullYear(); //extracting year from the date
+
+        var dobget = driverData.dateBirth; //getting user input
+        var dob = new Date(dobget); //formatting input as date
+        var prevY = dob.getFullYear(); //extracting year from input date
+
+        var ageDriver = currentY - prevY;
+        if (ageDriver < 18) {
+          setisError((prevErrors) => {
+            return { ...prevErrors, ["dateBirth"]: true };
+          });
+          alert("Driver Age should be more than 18");
+          return false;
+        } else {
+          setisError((prevErrors) => {
+            return { ...prevErrors, ["dateBirth"]: false };
+          });
+        }
       }
 
       if (driverData.mobile === "") {
@@ -847,7 +863,6 @@ const AddDriver = () => {
                     <div className="label required">Date of Birth</div>
                     <input
                       type="date"
-                      max="2003-02-07"
                       required
                       className={
                         isError.dateBirth

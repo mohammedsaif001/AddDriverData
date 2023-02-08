@@ -10,6 +10,10 @@
   box-sizing: border-box;
 }
 
+main {
+  /* margin-bottom: 12rem; */
+}
+
 .navbar {
   height: 3.4rem;
   position: relative;
@@ -528,5 +532,26 @@ main .dropdown_section .dropdown_icon {
   }
   main .dropdown_section {
     gap: 2rem;
+  }
+}
+
+@media only screen and (max-width: 1261px) {
+  main {
+    margin-bottom: 12rem;
+  }
+}
+@media only screen and (min-width: 797px) and (max-width: 957px) {
+  main {
+    margin-bottom: 25rem;
+  }
+}
+@media only screen and (max-width: 797px) {
+  main {
+    margin-bottom: 28rem;
+  }
+}
+@media only screen and (max-width: 493px) {
+  main {
+    margin-bottom: 42rem;
   }
 }

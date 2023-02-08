@@ -6,7 +6,6 @@ import AddDriver from "./AddDriver";
 import { Link } from "react-router-dom";
 import { DriverList } from "../context/DriverListContext";
 import { countryData } from "../apis/fetchingAPI";
-
 const Home = () => {
   const { driversList } = useContext(DriverList);
   const [selectMonthData, setselectMonthData] = useState(
@@ -38,7 +37,6 @@ const Home = () => {
     setCountry(e.target.value);
   };
 
-  console.log("he;;;;", driversList);
   const [handleModal, setHandleModal] = useState(false);
   return (
     <>

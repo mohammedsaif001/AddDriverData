@@ -431,7 +431,7 @@ input[type="radio"] {
 
 .errorFields {
   border: 2px solid red !important;
-  border-radius: inherit;
+  border-radius: 5px;
 }
 
 .kycImage {

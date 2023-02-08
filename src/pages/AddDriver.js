@@ -120,10 +120,19 @@ const AddDriver = () => {
   };
   const handleClickUploadImage = (e, name) => {
     e.preventDefault();
-    let uploadedImage = e.target.files;
+    let uploadedImage = e.target.files[0];
     console.log(uploadedImage);
+    if (e.target.files.length !== 0) {
+      setdriverData((prevValue) => {
+        return { ...prevValue, [name]: URL.createObjectURL(uploadedImage) };
+      });
+    }
+  };
+
+  const handleRemoveUploadedImage = (e, name) => {
+    e.preventDefault();
     setdriverData((prevValue) => {
-      return { ...prevValue, [name]: uploadedImage };
+      return { ...prevValue, [name]: null };
     });
   };
 
@@ -133,10 +142,6 @@ const AddDriver = () => {
       return { ...prevValue, [name]: value };
     });
   };
-
-  // for (let key in driverData) {
-  //   console.log(key, driverData[key]);
-  // }
 
   console.log(driverData);
   const formValidation = () => {
@@ -699,23 +704,59 @@ const AddDriver = () => {
                   }
                   onDragOver={(e) => handleDragOver(e, "driverImage")}
                   onDrop={(e) => handleDrop(e, "driverImage")}
-                  onClick={(e) => driverImageRef.current.click()}
                 >
                   <input
                     type="file"
                     required
                     className="inputImageHidden"
+                    accept="image/png, image/jpg, image/jpeg"
                     ref={driverImageRef}
                     onChange={(e) => handleClickUploadImage(e, "driverImage")}
                   />
-                  <img
-                    src="driverIcon.svg"
-                    alt="Add Driver"
-                    className="driverIcon"
-                  />
-                  <p className="driverAddContent">
-                    Click or drag & drop Driver Image
-                  </p>
+                  {driverData.driverImage === null || "" ? (
+                    <>
+                      {" "}
+                      <img
+                        src="driverIcon.svg"
+                        alt="Add Driver"
+                        className="driverIcon"
+                        onClick={(e) => driverImageRef.current.click()}
+                      />
+                      <p className="driverAddContent">
+                        Click or drag & drop Driver Image
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <div
+                        className="dropUploadedImage"
+                        style={{
+                          cursor: "pointer",
+                          position: "absolute",
+                          top: "3.5rem",
+                          right: "0",
+                          background: "red",
+                          borderRadius: "50%",
+                        }}
+                        onClick={(e) =>
+                          handleRemoveUploadedImage(e, "driverImage")
+                        }
+                      >
+                        {" "}
+                        <Icon
+                          icon="material-symbols:close"
+                          color="white"
+                          className="close_button_custom"
+                          height={25}
+                        />
+                      </div>
+                      <img
+                        src={driverData.driverImage}
+                        alt="uploadedDriverImage"
+                        className="driverIcon"
+                      />
+                    </>
+                  )}
                 </div>
                 <div className="personalDetailsInput">
                   <div className="input-field">
@@ -1454,23 +1495,60 @@ const AddDriver = () => {
                     }
                     onDragOver={(e) => handleDragOver(e, "frontImage")}
                     onDrop={(e) => handleDrop(e, "frontImage")}
-                    onClick={(e) => frontImageRef.current.click()}
                   >
                     <input
                       type="file"
+                      accept="image/png, image/jpg, image/jpeg"
                       className="inputImageHidden"
                       required
                       ref={frontImageRef}
                       onChange={(e) => handleClickUploadImage(e, "frontImage")}
                     />
-                    <img
-                      src="addImage.png"
-                      alt="AddImage"
-                      className="addImage"
-                    />
-                    <p className="addImageTitle">
-                      Click or Drag and Drop to upload KYC image
-                    </p>
+                    {driverData.frontImage === null || "" ? (
+                      <>
+                        {" "}
+                        <img
+                          src="addImage.png"
+                          alt="AddImage"
+                          className="addImage"
+                          onClick={(e) => frontImageRef.current.click()}
+                        />
+                        <p className="addImageTitle">
+                          Click or Drag and Drop to upload KYC image
+                        </p>
+                      </>
+                    ) : (
+                      <>
+                        <div
+                          className="dropUploadedImage"
+                          style={{
+                            cursor: "pointer",
+                            position: "absolute",
+                            top: "0.1rem",
+                            right: "3.2rem",
+                            zIndex: "1",
+                            background: "red",
+                            borderRadius: "50%",
+                          }}
+                          onClick={(e) =>
+                            handleRemoveUploadedImage(e, "frontImage")
+                          }
+                        >
+                          {" "}
+                          <Icon
+                            icon="material-symbols:close"
+                            color="white"
+                            className="close_button_custom"
+                            height={25}
+                          />
+                        </div>
+                        <img
+                          src={driverData.frontImage}
+                          alt="frontSideKYC"
+                          className="kycImage"
+                        />
+                      </>
+                    )}
                   </div>
 
                   {/* <input type="file" name="myImage" accept="image/*" />  */}
@@ -1483,23 +1561,60 @@ const AddDriver = () => {
                     }
                     onDragOver={(e) => handleDragOver(e, "backImage")}
                     onDrop={(e) => handleDrop(e, "backImage")}
-                    onClick={(e) => backImageRef.current.click()}
                   >
                     <input
                       type="file"
                       required
+                      accept="image/png, image/jpg, image/jpeg"
                       className="inputImageHidden"
                       ref={backImageRef}
                       onChange={(e) => handleClickUploadImage(e, "backImage")}
                     />
-                    <img
-                      src="addImage.png"
-                      alt="AddImage"
-                      className="addImage"
-                    />
-                    <p className="addImageTitle">
-                      Click or Drag and Drop to upload KYC image
-                    </p>
+                    {driverData.backImage === null || "" ? (
+                      <>
+                        {" "}
+                        <img
+                          src="addImage.png"
+                          alt="AddImage"
+                          className="addImage"
+                          onClick={(e) => backImageRef.current.click()}
+                        />
+                        <p className="addImageTitle">
+                          Click or Drag and Drop to upload KYC image
+                        </p>
+                      </>
+                    ) : (
+                      <>
+                        <div
+                          className="dropUploadedImage"
+                          style={{
+                            cursor: "pointer",
+                            position: "absolute",
+                            top: "0.1rem",
+                            right: "3.2rem",
+                            zIndex: "1",
+                            background: "red",
+                            borderRadius: "50%",
+                          }}
+                          onClick={(e) =>
+                            handleRemoveUploadedImage(e, "backImage")
+                          }
+                        >
+                          {" "}
+                          <Icon
+                            icon="material-symbols:close"
+                            color="white"
+                            className="close_button_custom"
+                            height={25}
+                          />
+                        </div>
+                        <img
+                          src={driverData.backImage}
+                          alt="backSideKYC"
+                          className="kycImage"
+                        />
+                      </>
+                    )}
                   </div>
                   {/* <input type="file" name="myImage" accept="image/*" /> */}
                 </div>

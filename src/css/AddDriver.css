@@ -118,7 +118,7 @@ main {
 }
 
 main .section .driverImage {
-  /* position: absolute; */
+  position: relative;
   cursor: pointer;
   width: 178.94px;
   height: 220px;
@@ -415,10 +415,9 @@ input[type="radio"] {
   color: #adadad;
 }
 
-/* .input-field-image {
-  display: flex;
- 
-} */
+.input-field-image {
+  position: relative;
+}
 
 .inputImageHidden {
   opacity: 0;
@@ -432,6 +431,12 @@ input[type="radio"] {
 
 .errorFields {
   border: 2px solid red !important;
+  border-radius: inherit;
+}
+
+.kycImage {
+  position: absolute;
+  width: 50%;
 }
 
 .downloadButton_section {

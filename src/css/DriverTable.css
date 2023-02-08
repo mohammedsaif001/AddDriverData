@@ -1,6 +1,7 @@
 .driverTable {
-  max-width: 100%;
+  max-width: 100vw;
   margin-top: 2rem;
+  margin-right: 0;
 }
 
 /* 

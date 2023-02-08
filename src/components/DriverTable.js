@@ -121,59 +121,62 @@ const DriverTable = () => {
   ];
   return (
     <div className="driverTable">
-      <MaterialTable
-        columns={columns}
-        data={driversList}
-        options={{
-          cellStyle: {
-            textAlign: "center",
-          },
-          headerStyle: {
-            background: "#109887",
-            color: "#FFFFFF",
-            fontFamily: "Roboto",
-            fontWeight: "300",
-            fontSize: "14px",
-            // width: "1357px",
-            // height: "40px",
-            textAlign: "center",
-            textTransform: "uppercase",
-          },
-          actionsColumnIndex: -1,
-          rowStyle: {
-            fontFamily: "Roboto",
-            fontStyle: "normal",
-            fontWeight: "400",
-            fontSize: "14px",
-            textAlign: "center",
+      <div className="driverMaterialTable">
+        <MaterialTable
+          columns={columns}
+          data={driversList}
+          options={{
+            cellStyle: {
+              textAlign: "center",
+            },
+            headerStyle: {
+              background: "#109887",
+              color: "#FFFFFF",
+              fontFamily: "Roboto",
+              fontWeight: "300",
+              fontSize: "14px",
+              // width: "1357px",
+              // height: "40px",
+              textAlign: "center",
+              textTransform: "uppercase",
+            },
+            actionsColumnIndex: -1,
+            rowStyle: {
+              fontFamily: "Roboto",
+              fontStyle: "normal",
+              fontWeight: "400",
+              fontSize: "14px",
+              textAlign: "center",
 
-            lineHeight: "22px",
-            color: "#000000",
-          },
-          showTitle: false,
-          filtering: true,
-          search: false,
-          filterCellStyle: {
-            background: "#FBFDF7",
-          },
-        }}
-        actions={[
-          {
-            icon: () => <CheckBoxOutlineBlankIcon />,
-            onclick: () => <CheckBoxIcon />,
-          },
-        ]}
-        icons={{
-          Filter: () => <div />,
-        }}
-        localization={{
-          pagination: {
-            labelDisplayedRows: "{from}-{to} of {count}",
-            labelRowsSelect: "",
-            labelRowsPerPage: "Rows per page:",
-          },
-        }}
-      />
+              lineHeight: "22px",
+              color: "#000000",
+            },
+            showTitle: false,
+            filtering: true,
+            search: false,
+            filterCellStyle: {
+              background: "#FBFDF7",
+            },
+          }}
+          actions={[
+            {
+              icon: () => <CheckBoxOutlineBlankIcon />,
+              onclick: () => <CheckBoxIcon />,
+            },
+          ]}
+          icons={{
+            Filter: () => <div />,
+          }}
+          localization={{
+            pagination: {
+              labelDisplayedRows: "{from}-{to} of {count}",
+              labelRowsSelect: "",
+              labelRowsPerPage: "Rows per page:",
+            },
+          }}
+        />
+      </div>
+
       <div className="downloadButton_section">
         <CSVLink {...csvLink} style={{ textDecoration: "none" }}>
           <div className="downloadButton">

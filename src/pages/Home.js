@@ -66,6 +66,7 @@ const Home = () => {
                   className="dropdown"
                   style={{
                     position: "absolute",
+                    cursor: "pointer",
                     // border: "none",
                     top: "-20px",
                     width: "12rem",
@@ -105,6 +106,7 @@ const Home = () => {
                   className="dropdown"
                   style={{
                     position: "absolute",
+                    cursor: "pointer",
                     // border: "none",
                     top: "-20px",
                     width: "12rem",

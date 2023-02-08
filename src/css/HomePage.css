@@ -375,7 +375,6 @@ main .dropdown {
   justify-content: flex-end;
 }
 main .dropdown_section .dropdown_individual {
-  cursor: pointer;
   display: flex;
   flex-flow: row wrap;
   width: 16rem;

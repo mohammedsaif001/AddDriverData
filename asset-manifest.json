@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/AddDriverData/static/css/main.8ae86eeb.css",
-    "main.js": "/AddDriverData/static/js/main.b3a1814c.js",
+    "main.js": "/AddDriverData/static/js/main.604d28e4.js",
     "static/js/498.5d160324.chunk.js": "/AddDriverData/static/js/498.5d160324.chunk.js",
     "static/js/703.6a7cd0f7.chunk.js": "/AddDriverData/static/js/703.6a7cd0f7.chunk.js",
     "static/js/142.fe2a3322.chunk.js": "/AddDriverData/static/js/142.fe2a3322.chunk.js",
     "index.html": "/AddDriverData/index.html",
     "main.8ae86eeb.css.map": "/AddDriverData/static/css/main.8ae86eeb.css.map",
-    "main.b3a1814c.js.map": "/AddDriverData/static/js/main.b3a1814c.js.map",
+    "main.604d28e4.js.map": "/AddDriverData/static/js/main.604d28e4.js.map",
     "498.5d160324.chunk.js.map": "/AddDriverData/static/js/498.5d160324.chunk.js.map",
     "703.6a7cd0f7.chunk.js.map": "/AddDriverData/static/js/703.6a7cd0f7.chunk.js.map",
     "142.fe2a3322.chunk.js.map": "/AddDriverData/static/js/142.fe2a3322.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8ae86eeb.css",
-    "static/js/main.b3a1814c.js"
+    "static/js/main.604d28e4.js"
   ]
 }

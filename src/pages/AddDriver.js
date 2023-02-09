@@ -16,6 +16,8 @@ const AddDriver = () => {
     driverData,
     setdriverData,
     initialState,
+    userID,
+    setUserId,
   } = useContext(DriverList);
   const driverImageRef = useRef();
   const frontImageRef = useRef();
@@ -508,7 +510,7 @@ const AddDriver = () => {
     const isFormValid = formValidation();
     console.log("sgdjsgujds", isError, isFormValid);
     if (isFormValid) {
-      isValidBirthdate(driverData.dateBirth, { minAge: 18 });
+      setUserId(userID + 1);
       setDriversList((prevList) => [
         ...prevList,
         { ...staticTableValues, ...driverData },

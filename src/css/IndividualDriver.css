@@ -1,0 +1,14 @@
+/* input,
+.dropdownCustom {
+  background-color: rgba(233, 233, 233, 0.956);
+  cursor: no-drop;
+}
+
+.input-field .dropdownCustom,
+.input-field .dropdownCustom select,
+.input-field input[type="date"],
+.section1_info .driverImage img,
+main .section .driverImage,
+.input-field-image .imageDiv {
+  cursor: no-drop;
+} */

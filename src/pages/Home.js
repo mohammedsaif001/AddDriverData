@@ -11,6 +11,7 @@ const Home = () => {
   const [selectMonthData, setselectMonthData] = useState(
     "12 MAR 2022 - 12 AUG 2022"
   );
+  console.log(driversList, "jasgisak");
   const [country, setCountry] = useState("Afghanistan");
   const [countryList, setCountryList] = useState([]);
   const countryRef = useRef();

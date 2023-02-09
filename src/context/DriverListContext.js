@@ -44,8 +44,10 @@ const initialState = {
 };
 export const DriverListContext = ({ children }) => {
   const [driverData, setdriverData] = useState(initialState);
+  const [userID, setUserId] = useState(1);
   const [driversList, setDriversList] = useState([]);
   const staticTableValues = {
+    userID: userID,
     status: "Static",
     moxeyID: "MXUAE-DR00000001",
     cust_id: "ARB45678900",
@@ -60,6 +62,8 @@ export const DriverListContext = ({ children }) => {
         driverData,
         setdriverData,
         initialState,
+        userID,
+        setUserId,
       }}
     >
       {children}

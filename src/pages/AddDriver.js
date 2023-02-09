@@ -669,7 +669,7 @@ const AddDriver = () => {
                   <input
                     type="radio"
                     name="userType"
-                    value={driverData.userType}
+                    value="Driver"
                     defaultChecked
                     required
                     onChange={handleInputChange}
@@ -681,7 +681,7 @@ const AddDriver = () => {
                   <input
                     type="radio"
                     name="userType"
-                    value={"Broker & Driver"}
+                    value="Broker & Driver"
                     onChange={handleInputChange}
 
                     // Onchange={(e) => setdriverData.userType(e.target.value)}
@@ -1642,7 +1642,7 @@ const AddDriver = () => {
                         type="radio"
                         name="greencardholder"
                         defaultChecked
-                        value={driverData.greencardholder}
+                        value="No"
                         onChange={handleInputChange}
 
                         // Onchange={(e) =>
@@ -1655,7 +1655,7 @@ const AddDriver = () => {
                       <input
                         type="radio"
                         name="greencardholder"
-                        value={driverData.greencardholder}
+                        value="Yes"
                         onChange={handleInputChange}
 
                         // Onchange={(e) =>
@@ -1674,7 +1674,7 @@ const AddDriver = () => {
                         type="radio"
                         name="taxPayer"
                         defaultChecked
-                        value={driverData.taxPayer}
+                        value="No"
                         onChange={handleInputChange}
 
                         // Onchange={(e) => setdriverData.taxPayer(e.target.value)}
@@ -1685,7 +1685,7 @@ const AddDriver = () => {
                       <input
                         type="radio"
                         name="taxPayer"
-                        value={driverData.taxPayer}
+                        value="Yes"
                         onChange={handleInputChange}
 
                         // Onchange={(e) => setdriverData.taxPayer(e.target.value)}
@@ -1704,7 +1704,7 @@ const AddDriver = () => {
                         type="radio"
                         name="usResident"
                         defaultChecked
-                        value={driverData.usResident}
+                        value="No"
                         onChange={handleInputChange}
 
                         // Onchange={(e) =>
@@ -1717,7 +1717,7 @@ const AddDriver = () => {
                       <input
                         type="radio"
                         name="usResident"
-                        value={driverData.usResident}
+                        value="Yes"
                         onChange={handleInputChange}
 
                         // Onchange={(e) =>
@@ -1742,7 +1742,7 @@ const AddDriver = () => {
                         type="radio"
                         name="politicallyExposed"
                         defaultChecked
-                        value={driverData.politicallyExposed}
+                        value="No"
                         onChange={handleInputChange}
 
                         // Onchange={(e) =>
@@ -1755,7 +1755,7 @@ const AddDriver = () => {
                       <input
                         type="radio"
                         name="politicallyExposed"
-                        value={driverData.politicallyExposed}
+                        value="Yes"
                         onChange={handleInputChange}
 
                         // Onchange={(e) =>

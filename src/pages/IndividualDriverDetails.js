@@ -67,6 +67,7 @@ const IndividualDriverDetails = () => {
                   checked={
                     individualDriverData?.userType === "Driver" ? true : false
                   }
+                  disabled
                 />
                 <div className="">Driver</div>
               </div>

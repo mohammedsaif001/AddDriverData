@@ -2,7 +2,7 @@ import { createContext, useState } from "react";
 export const DriverList = createContext();
 const initialState = {
   gender: "",
-  userType: "",
+  userType: "Driver",
   fName: "",
   mName: "",
   lName: "",

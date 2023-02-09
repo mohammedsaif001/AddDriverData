@@ -7,8 +7,10 @@ import CheckBoxIcon from "@material-ui/icons/CheckBox";
 import { DriverList } from "../context/DriverListContext";
 import "../css/DriverTable.css";
 import { CSVLink } from "react-csv";
+import { useHistory } from "react-router-dom";
 
 const DriverTable = () => {
+  const history = useHistory();
   const { driversList } = useContext(DriverList);
   console.log(driversList);
 
@@ -161,7 +163,9 @@ const DriverTable = () => {
           actions={[
             {
               icon: () => <CheckBoxOutlineBlankIcon />,
-              onChange: () => <CheckBoxIcon />,
+              onClick: (e, data) => {
+                history.push(`/individualDriverDetails/${data.userID}`);
+              },
             },
           ]}
           icons={{

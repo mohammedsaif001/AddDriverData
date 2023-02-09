@@ -161,7 +161,7 @@ const DriverTable = () => {
           actions={[
             {
               icon: () => <CheckBoxOutlineBlankIcon />,
-              onclick: () => <CheckBoxIcon />,
+              onChange: () => <CheckBoxIcon />,
             },
           ]}
           icons={{
@@ -170,7 +170,7 @@ const DriverTable = () => {
           localization={{
             pagination: {
               labelDisplayedRows: "{from}-{to} of {count}",
-              labelRowsSelect: "",
+              labelRowsSelect: "rows",
               labelRowsPerPage: "Rows per page:",
             },
           }}
